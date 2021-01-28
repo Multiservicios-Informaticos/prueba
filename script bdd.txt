@@ -1,0 +1,84 @@
+USE [SESOPMO]
+GO
+/****** Object:  Table [dbo].[Ticket]    Script Date: 27/01/2021 7:13:11 p. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Ticket](
+	[Ticket] [int] NOT NULL,
+	[Clasificacion] [int] NOT NULL,
+	[Prioridad] [varchar](50) NOT NULL,
+	[Asunto] [varchar](200) NOT NULL,
+	[HorasSoporte] [varchar](200) NOT NULL,
+	[Tel] [varchar](50) NOT NULL,
+	[FAX] [varchar](50) NOT NULL,
+	[EstadoTicket] [varchar](150) NOT NULL,
+	[ACorreo] [int] NOT NULL,
+	[Saldo] [float] NOT NULL,
+	[SaldoMAX] [float] NOT NULL,
+	[Tipo] [int] NOT NULL,
+	[EsMoroso] [int] NOT NULL,
+	[Pais] [int] NOT NULL,
+	[Depto] [int] NOT NULL,
+	[Muni] [int] NOT NULL,
+	[TDepto] [varchar](50) NOT NULL,
+	[TMuni] [varchar](50) NOT NULL,
+	[DCred] [int] NOT NULL,
+	[Vendedor] [int] NOT NULL,
+	[Ruta] [int] NOT NULL,
+	[TipoPrecioBono] [int] NOT NULL,
+	[Empaque] [int] NOT NULL,
+	[PDescuento] [float] NOT NULL,
+	[AEncargado] [int] NOT NULL,
+	[ASolicitante] [int] NOT NULL,
+	[ASucursal] [int] NOT NULL,
+	[DataFile] [image] NULL,
+	[ImageFile] [image] NULL,
+	[Comentarios] [varchar](1000) NOT NULL,
+	[Edad] [int] NOT NULL,
+	[Fecha] [datetime] NOT NULL,
+	[FI] [datetime] NOT NULL,
+	[Estado] [int] NOT NULL,
+	[FS] [datetime] NOT NULL,
+ CONSTRAINT [PK_Cliente] PRIMARY KEY NONCLUSTERED 
+(
+	[Ticket] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Usuario]    Script Date: 27/01/2021 7:13:11 p. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Usuario](
+	[ID] [int] NOT NULL,
+	[Nombre] [varchar](100) NOT NULL,
+	[Usuario] [varchar](50) NOT NULL,
+	[Clave] [varchar](50) NOT NULL,
+	[Correo] [varchar](100) NOT NULL,
+	[Cel] [varchar](25) NOT NULL,
+	[PINCODE] [varchar](10) NOT NULL,
+	[Token] [varchar](100) NOT NULL,
+	[DeviceID] [varchar](100) NOT NULL,
+	[Estado] [int] NOT NULL,
+	[FN] [datetime] NOT NULL,
+	[FS] [datetime] NOT NULL,
+	[FCP] [datetime] NOT NULL,
+	[Alerta] [int] NOT NULL,
+	[AlertaM] [int] NOT NULL,
+	[ACobrador] [int] NOT NULL,
+	[AVendedor] [int] NOT NULL,
+	[ADepto] [int] NOT NULL,
+	[AFacturador] [int] NOT NULL,
+	[Profesion] [int] NOT NULL,
+	[Rol] [int] NOT NULL,
+	[NIT] [varchar](25) NOT NULL,
+	[DPI] [varchar](25) NOT NULL,
+ CONSTRAINT [PK_Usuario] PRIMARY KEY NONCLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
